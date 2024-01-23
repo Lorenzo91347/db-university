@@ -1,0 +1,48 @@
+question 1 :
+
+SELECT
+    COUNT(`id`), YEAR(`enrolment_date`)
+FROM
+    `students`
+GROUP BY
+	YEAR(`enrolment_date`);
+
+
+-------------------------------
+
+question 2:
+
+SELECT
+    COUNT(`id`), `office_address`
+FROM
+    `teachers`
+GROUP BY
+	`office_address`;
+
+-------------------------------
+
+question 3:
+
+SELECT
+    AVG(`vote`),`exam_id`
+FROM
+    `exam_student`
+GROUP BY 
+    `exam_id`;
+
+-------------------------------
+
+question 4:
+
+SELECT
+    COUNT(`department_id`) AS courses_num,`departments`.`name` AS dept_name
+FROM
+    `degrees`
+INNER JOIN
+	`departments`
+    ON
+    `degrees`.`department_id`= `departments`.`id`
+GROUP BY
+	`departments`.`name`;
+
+
